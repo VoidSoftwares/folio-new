@@ -1,0 +1,446 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+.jarallax-keep-img {
+  position: relative;
+  z-index: 0;
+}
+
+.jarallax-keep-img > .jarallax-img {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  z-index: -100;
+  opacity: 0.75;
+}
+
+.jarallax {
+  min-height: 90vh;
+}
+
+.jarallax-keep-img.demo-float-left {
+  margin-right: 15px;
+  margin-left: -60px;
+}
+
+.jarallax-keep-img.demo-float-right {
+  margin-left: 15px;
+  margin-right: -60px;
+}
+
+.detailsposition {
+  position: absolute;
+  z-index: 100;
+  width: 90%;
+  left: 5%;
+  top: 200px;
+}
+
+/* Updated CSS for contact details */
+.contactdetails {
+  background-color: #26085e;
+  opacity: 0; /* Initially hidden */
+  color: #fff;
+  margin-left: 0px;
+  border-radius: 30px;
+  padding: 30px 10px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 2.33333;
+  transition: opacity 0.5s ease, visibility 0s 0.5s; /* Smooth opacity and visibility transition */
+  visibility: hidden; /* Initially hidden */
+}
+
+/* Making the contact details visible when the parent (button) is clicked */
+.team-content.visible .contactdetails {
+  opacity: 0.85; /* Pop-up effect by changing opacity */
+  visibility: visible; /* Set visibility to visible when the details are shown */
+  transition: opacity 0.5s ease, visibility 0s 0s; /* Smooth visibility transition when showing */
+}
+
+@media screen and (max-width: 600px) {
+  .jarallax-keep-img.demo-float-left,
+  .jarallax-keep-img.demo-float-right {
+    margin-right: 0;
+    margin-left: 0;
+    float: none;
+  }
+}
+
+.jarallax > .jarallax-img,
+.jarallax > .jarallax-container,
+.jarallax-keep-img > .jarallax-container {
+  opacity: 0.85;
+}
+
+@media only screen and (max-width: 767px) {
+  .header__wrapper.js-header-wrapper.visible:after {
+    content: " ";
+    background: #00113b;
+    height: 40vh;
+    width: 100%;
+    display: block;
+    transform: skewY(-20deg);
+    position: absolute;
+    bottom: -20vh;
+  }
+}
+
+.header__wrapper {
+  background: #fff;
+}
+
+/* bullet points css start */
+ul.icon-list {
+  text-indent: unset;
+  margin: 0 0 0 40px;
+}
+.icon-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.li-icon {
+  float: left;
+  display: inline-block;
+  width: 60px;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+.li-icon img {
+  max-height: 58px;
+  max-width: 55px;
+  width: auto;
+  height: auto;
+  vertical-align: middle;
+}
+.li-content {
+  display: inline-block;
+}
+/* bullet points css end */
+
+/* header css start */
+.header__wrapper .header__center {
+  max-width: 1250px;
+}
+.menu__logo {
+  margin-bottom: 48px;
+  display: inline-block;
+  font-size: 0;
+}
+.menu__logo img {
+  width: 191px;
+}
+
+.download-btn-list {
+  margin-top: 25px;
+}
+.download-btn-list ul {
+  list-style: none;
+  text-indent: unset;
+  margin: 0px;
+  text-align: center;
+}
+.download-btn-list ul li {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.dropbtn {
+  background-color: #232340;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 16px;
+  font-size: 16px;
+  border: none;
+  display: inline-block;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  max-height: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin: 0px;
+  text-align: center;
+}
+
+.dropdown-content li {
+  display: block !important;
+  margin: 0px !important;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.dropdown-content a:hover {
+  background-color: #b625c1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropbtn:hover {
+  background-color: #b625c1;
+}
+/* header css end */
+
+.text-center {
+  text-align: center;
+}
+.w-100 {
+  width: 100%;
+}
+.team-content {
+  display: none;
+}
+.team-content.visible {
+  opacity: 0.85 !important;
+  visibility: visible !important;
+  display: block;
+}
+.mt-25 {
+  margin-top: 25px;
+}
+.mt-0 {
+  margin-top: 0px !important;
+}
+.owl-nav {
+  margin-top: 5px;
+}
+.nav-menu .nav-menu-item {
+  display: inline-block;
+  padding: 0px 10px;
+  font-size: 18px;
+  color: #232340;
+  font-weight: 700;
+  position: relative;
+}
+
+.nav-menu .nav-menu-item:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #b444ff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-menu .nav-menu-item:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Basic styles for .contacts .figures */
+.contacts .figures {
+  top: 109px;
+  right: calc(50% - 620px);
+  width: 43%;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 767px) {
+  .menu__logo {
+    display: none;
+  }
+
+  .header__wrapper.js-header-wrapper.visible::after {
+    display: none;
+  }
+
+  .header__wrapper .header__center {
+    padding: 170px 32px 30px;
+  }
+
+  .details__item {
+    padding: 10px;
+  }
+
+  /* Override .contacts .figures in mobile view */
+  .contacts .figures {
+    right: -30px;
+    width: 45%;
+  }
+}
+
+/* Default styles for smaller screens (mobile/tablet) */
+.custom-info {
+  margin-top: 30px;
+  font-size: 22px;
+  line-height: 1.5;
+  text-align: center;
+  position: relative;
+  transform: translateY(-60px);
+  color: #b444ff;
+}
+
+/* Media query for larger screens (desktop) */
+@media (min-width: 1024px) {
+  .custom-info {
+    font-size: 22px;
+    text-align: left;
+    transform: translateY(-100px);
+  }
+
+  .backed-by {
+    font-size: 20px;
+  }
+}
+
+/* Style for Backed by Liberty section */
+.backed-by {
+  font-size: 20px;
+  color: #232340;
+  text-align: left;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+
+@media (min-width: 1024px) {
+  .backed-by {
+    font-size: 20px;
+    color: #232340;
+    font-size: 16px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding-left: 0px;
+  }
+}
+.click-product-info {
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Vertically center the content */
+  width: 100%; /* Make sure it spans the entire width of the page */
+  padding: 40px 10px; /* Optional padding for spacing */
+  box-sizing: border-box; /* Ensure padding is included in total width */
+}
+
+.click-product-title {
+  font-size: 22px; /* Adjust the font size */
+  font-weight: bold;
+  color: #b444ff;
+  text-align: center; /* Ensure the text is centered */
+  line-height: 1.4; /* Improve text line spacing */
+  margin: 0;
+  padding: 10px; /* Optional padding to prevent text from touching edges */
+  width: 100%; /* Allow the title to span the full width */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 767px) {
+  .click-product-title {
+    font-size: 18; /* Adjust font size for smaller screens */
+    padding: 0 20px; /* Optional adjustment for mobile padding */
+  }
+}
+/* Custom adjustments to reduce gap between text and team section */
+.details__head {
+  margin-bottom: 15px;
+}
+
+/* Reducing the top margin for the container */
+.details__container {
+  margin-top: 5px;
+  padding-top: 20px;
+}
+
+/* Additional animations for the .custom-info */
+.custom-info {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+  font-size: 20px;
+  color: #b444ff;
+}
+
+.custom-info.aos-animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Adjusting space between items in carousel */
+.details__item {
+  min-width: 300px;
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  margin-bottom: 10px; /* Reduce space between carousel items */
+  padding-bottom: 5px; /* Ensure no extra bottom padding */
+}
+
+/* Reduce gap between image and category */
+.details__preview {
+  margin-bottom: 10px; /* Space between image and category */
+}
+
+.details__category {
+  margin-top: 5px; /* Space between image and category title */
+  margin-bottom: 15px; /* Adjust if needed */
+}
+
+/* Styling for the toggle button (can look like a circle or button) */
+.details__btn {
+  cursor: pointer; /* Indicates it's clickable */
+  padding: 10px;
+  background-color: #b444ff;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.details__btn:hover {
+  background-color: #9b3ccc; /* Darker shade when hovering */
+}
+
+.details__btn:focus {
+  outline: none; /* Remove outline on focus */
+}
+.wrapper_gradient {
+  position: relative;
+  width: 100vw; /* Full viewport width */
+  height: auto; /* Content dictates height */
+  margin: 0; /* Remove default external spacing */
+  padding: 0; /* Remove padding */
+  box-sizing: border-box; /* Include padding and borders in dimensions */
+  background: linear-gradient(
+    to right,
+    rgba(245, 245, 255, 1),
+    rgba(255, 255, 255, 1)
+  );
+  background-size: cover; /* Gradient fills the wrapper */
+  background-position: center; /* Center alignment for consistent appearance */
+}
+
+#products {
+  width: 100%; /* Matches wrapper's width */
+}
+html,
+body {
+  overflow-x: hidden; /* Disable horizontal scrolling */
+  margin: 0; /* Remove default margin to prevent scrolling caused by the body */
+  padding: 0; /* Remove padding */
+  width: 100%; /* Ensure body width doesn't exceed viewport */
+}
+
+.review {
+  overflow: hidden;
+}

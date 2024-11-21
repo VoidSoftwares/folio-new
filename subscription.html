@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Artisan Underwriting</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/Logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_PNG3232.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_PNG3232.png">
+    <link rel="manifest" href="img/favicon_PNG.png">
+    <link rel="mask-icon" href="img/logo-white.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Craftsmanship in every risk.">
+    <link rel="stylesheet" media="all" href="css/app.css">
+    <link rel="stylesheet" media="all" href="style.css">
+</head>
+<body class="subscription-page">
+    <div class="page">
+        <div class="main__bg">
+            <img class="main__pic" src="img/bg-main.jpg" alt="">
+        </div>
+        <div class="main__center center">
+            <div class="main__wrap">
+                <div class="main__stage stage" data-aos="transform">"Subscribe to our Monthly Newsletter"</div>
+                <h1 class="main__title title h1">
+                    <span data-aos="transform" data-aos-delay="300">Exclusive Updates!</span>
+                </h1>
+                <!-- Subscription Form -->
+                <form id="subscribe-form" class="subscribe-form">
+                    <input type="email" id="email" name="email" class="email-input" placeholder="Enter Your Email" required>
+                    <button type="submit" class="subscribe-button">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="main__view" data-aos>
+            <div class="main__preview mail-icon">
+                <img class="main__pic" src="img/mail.png" alt="">
+            </div>
+        </div>
+        <div class="main__figures">
+            <div class="main__figure" data-aos="animation-translate-y">
+                <img class="main__pic js-parallax" data-scale="2.2" data-orientation="down" src="img/figure-1.png" alt="">
+            </div>
+        </div>
+        <div class="cursor"></div>
+
+        <script src="js/app.js"></script>
+        <script src="js/common.js"></script>
+        <script>
+document.getElementById('subscribe-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+    const email = document.getElementById('email').value; // Get the email input value
+    const subscribeButton = document.querySelector('.subscribe-button');
+    
+    // Show loading state
+    subscribeButton.textContent = 'Processing...';
+    subscribeButton.disabled = true; // Disable button
+
+    fetch('subscribe.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email: email })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.error) {
+            alert('Error: ' + data.error);
+        } else {
+            alert(data.message);
+            document.getElementById('subscribe-form').reset();
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('There was an error. Please try again.');
+    })
+    .finally(() => {
+        // Reset button state
+        subscribeButton.textContent = 'Subscribe';
+        subscribeButton.disabled = false; // Re-enable button
+    });
+});
+        </script>
+    </div>
+</body>
+</html>
